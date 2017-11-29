@@ -4,49 +4,45 @@ import unittest
 # Given a string and a non-negative int n, return a larger string
 # that is n copies of the original string.
 
+# Given a string and a non-negative int n, return a larger string
+# that is n copies of the original string.
+
 def string_times(string, n):
-    
-    liste = []
-    for n in len(string):
-        
-    return;
+    return n* string
 
 # Given an array of ints, return True if one of the first 4 elements
 # in the array is a 9. The array length may be less than 4.
 def array_front9(nums):
     #longueur=min(len(nums) & 4)
-    for n in range(nums = 4):
-        if(nums[0:3] == 9):
-            return True;
-        else:
-            continue;
-            
-    return
+    length = nums.length
+    for i in range(0,length):
+      if i <=3 and nums[i] == 9:
+        return True
+    return False
 
 
 # Given a string, return the count of the number of times
 # that a substring length 2 appears  in the string and also as
 # the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count the end substring).
 def last2(string):
+  if string.length < 2:
     return
+  pattern = string[-2:]
+  count = 0
+  for i in range(0,string.length - 3):
+    if string[i:i+2] == pattern:
+      count += 1
+  return
 
+
+def toto(x):
+  return x.length
 
 #Write a program that maps a list of words into a list of
 #integers representing the lengths of the correponding words.
 def length_words(array):
-    
-    array={}
-    for word in array:
-        if word not in wordcount:
-            wordcount[word] = 1
-        else:
-            wordcount[word] += 1
-            
+  return map(array, lambda x: x.length)
 
-    for k,v in wordcount.items():
-        print (k, v)
-    
-    return
 
 #write fizbuzz programm
 def fizbuzz():
@@ -62,18 +58,14 @@ def fizbuzz():
 
 #Write a function that takes a number and returns a list of its digits.
 def number2digits(number):
-  return
+  
+  return [x for x in str(number)]
 
 #Write function that translates a text to Pig Latin and back.
 #English is translated to Pig Latin by taking the first letter of every word,
 #moving it to the end of the word and adding 'ay'
-def pigLatin(sentence):
-        sentence = input('Let us translate this sentence in PigLatin')
-    sentence_list = sentence.split()
-
-    for part in sentence_list:
-        first_letter = part[0]
-  return
+def pigLatin(text):
+  return ' '.join([ x[1:] + x[0]+'ay' for x in text.split(' ') ])
 
 #Write a proramm that returna dictionary of occurences of the alphabet for a given string.
 # Test it with the Lorem upsuj
