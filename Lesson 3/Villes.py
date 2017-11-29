@@ -9,17 +9,17 @@ def get_soup(url):
     soup = BeautifulSoup(r.text, 'html.parser')
     return soup
 
-def get_distance(ville1, ville2):
-    response = requests.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+ville1+"&destinations="+ville2+"&key=AIzaSyBKED6FYbqdBZvufn-cYD--4MpyClWFrh4").json()
+def path(vi1, vi2):
+    response = requests.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+vi1+"&destinations="
++vi2+"&key=AIzaSyBKED6FYbqdBZvufn-cYD--4MpyClWFrh4").json()
     data = response.json()
-    print(type(data))
-    print(response)
+
     return data["rows"][0]["elements"][0]["distance"]["text"]
 
 
 
 def main():
-# display some lines
+
     url = 'https://www.insee.fr/fr/statistiques/1906659'
     r = requests.get(url)
     soup = BeautifulSoup(r.text, 'html.parser')
